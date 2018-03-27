@@ -27,30 +27,19 @@
             float: bottom;
         }
 
-        .alignleft {
+        /*LINE...*/
+
+        .popup {
             float: left;
             font-family: defalt;
         }
-        .alignright {
+        .popup1 {
             float: right;
+            margin-right: 60px;
             font-family: defalt;
         }
 
-        .abc {
-            text-align: center;
-            padding-bottom: 200px;
-
-        }
-        .abc > ul {
-            display: inline-block;
-            font-family: "Helvetica", sans-serif;
-        }
-
-        .left {
-            float: left;
-            width:200px;
-
-        }
+        /* LINE... LINE*/
 
         .topnav {
             overflow: hidden;
@@ -120,6 +109,114 @@
             }
         }
 
+        /*LINE... LINE*/
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 205px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+
+        /* LINE... LINE*/
+
+        .popup1 {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup1 .popuptext1 {
+            visibility: hidden;
+            width: 205px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup1 .popuptext1::after {
+            content: "";
+            position: absolute;
+            bottom: 97%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 20px;
+            /*border-style: solid;*/
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup1 .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;
+            }
+
+        .left{
+            float: left;
+            width: 200px;
+        }
+
     </style>
 </head>
 
@@ -128,7 +225,7 @@
     <a id="top" href="https://avaanikataria.github.io">Home</a>
     <a class="active" href="https://avaanikataria.github.io/about.html">About</a>
     <a href="https://avaanikataria.github.io/gameschedule.html">Game Schedule</a>
-    <a href="#contact">Contact</a>
+
 </div>
 
 <h1 id="head">ABOUT - Girl's Golf</h1>
@@ -141,7 +238,9 @@
             <li>Schedule</li>
             <li>Volunteer</li>
         </ul><br>
+    </div>
 
+<div>
 <img class="left" src="https://target.scene7.com/is/image/Target/52928868_Alt05?wid=520&hei=520&fmt=pjpeg" width="200"
           alt="picture of coach">
     </div>
@@ -149,13 +248,28 @@
 <h2 class="highlight"><a href="#top">CLICK HERE TO GO BACK TO THE TOP</a></h2>
 
 
-<div>
-    <p class="alignleft">Coach: Ahmad Dilliehunt<br>
-        Contact Info: Ahmad Dilliehunt's email (need to get)</p>
-    <p class="alignright">Captain: Nell Cook
-    <br>Contact Info: nellcook@students.berkeley.net</p>
+<div class="popup" onclick="myFunction()">Coach: Ahmad Dilliehun
+    <span class="popuptext" id="myPopup">adilliehunt@hotmail.com</span>
 </div>
+
+<div class="popup1" onclick="Function()">Captain: Nell Cook
+    <span class="popuptext1" id="myPopup1">nellcook@students.berkeley.net</span>
+</div>
+
+
 <div style="clear: both;"></div>
+
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+
+    function Function() {
+        var popup = document.getElementById("myPopup1");
+        popup.classList.toggle("show");
+    }
+</script>
 
 
 </body>
