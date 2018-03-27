@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BHS Girl's Golf - About</title>
+    <title>BHS Girl's Golf - Schedules</title>
     <style>
 
         body{
             background-color: rgba(255, 244, 49, 0.5);
-            text-align:center;
         }
 
         p{
             font-size: 17px;
             font-family: "Helvetica", sans-serif;
+            text-align: center;
         }
 
         #head{
             border: 4px inset red;
             background-color: rgba(255, 34, 21, 0.3);
+            text-align:center;
         }
 
         .highlight{
@@ -25,42 +26,32 @@
             border-radius: 14px;
             background-color: rgba(255, 34, 21, 0.3);
             float: bottom;
+            text-align:center;
         }
 
-        .alignleft {
+        /*LINE...*/
+
+        .popup {
             float: left;
             font-family: defalt;
         }
-        .alignright {
+        .popup1 {
             float: right;
+            margin-right: 60px;
             font-family: defalt;
         }
 
-        .abc {
-            text-align: center;
-            padding-bottom: 200px;
-
-        }
-        .abc > ul {
-            display: inline-block;
-            font-family: "Helvetica", sans-serif;
-        }
-
-        .left {
-            float: left;
-            width:200px;
-
-        }
+        /* LINE... LINE*/
 
         .topnav {
             overflow: hidden;
-            background-color: #e9e9e9;
+            background-color: #000000;
         }
 
         .topnav a {
             float: left;
             display: block;
-            color: black;
+            color: #ffffff;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -68,8 +59,7 @@
         }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            color: rgb(255, 34, 21);
         }
 
         .topnav a.active {
@@ -120,43 +110,173 @@
             }
         }
 
+        /* LINE... LINE*/
+
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            width: 205px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+
+        /* LINE... LINE*/
+
+        .popup1 {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* The actual popup */
+        .popup1 .popuptext1 {
+            visibility: hidden;
+            width: 205px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 0%;
+            left: 50%;
+            margin-left: -80px;
+        }
+
+        /* Popup arrow */
+        .popup1 .popuptext1::after {
+            content: "";
+            position: absolute;
+            bottom: 97%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 20px;
+            /*border-style: solid;*/
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Toggle this class - hide and show the popup */
+        .popup1 .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+        }
+
+        .box{
+            width: 500px;
+            background-color: white;
+            margin: auto;
+            margin-top: 40px;
+            border: 8px solid black;
+        }
+
     </style>
 </head>
-
 <body>
+
+
 <div class="topnav">
     <a id="top" href="https://avaanikataria.github.io">Home</a>
     <a href="https://avaanikataria.github.io/about.html">About</a>
     <a class="active" href="https://avaanikataria.github.io/gameschedule.html">Game Schedule</a>
-    <a href="#contact">Contact</a>
+    <a href="#wordguesser">Word Guesser</a>
 </div>
 
 <h1 id="head">ABOUT - Girl's Golf</h1>
 
+<div class="box">
 <p> What is Berkeley High Girl's Golf team all about?</p>
 
-<div class="abc">
-    <ul>
-        <li>Coach</li>
-        <li>Schedule</li>
-        <li>Volunteer</li>
-    </ul><br>
+<h3>Practices and Games</h3>
+<p> We have practices on Monday and Wednesday. We usually have games on Tuesdays and Thursdays. </p>
 
-    <img class="left" src="https://target.scene7.com/is/image/Target/52928868_Alt05?wid=520&hei=520&fmt=pjpeg" width="200"
-         alt="picture of coach">
+<h3>Timings and Location</h3>
+<p> The golf team practice at Tilden Golf Course from 4-6pm after school. We usually start try outs in the summer and start practicing as soon as possible
+     because girl's golf season starts right away compared to other sports. Saying this, the golf season is only for 3 months. Therefore, one has to be very
+     committed. When we have games we have to leave right after 6th period. Depending what time the games are at and how far we have to travel to have time
+     to warm up. Sometimes we have to either leave half way through 5th period or at the end of 4th period in order to make it on time and have at least
+     30 minutes to warm-up </p>
+
 </div>
 
 <h2 class="highlight"><a href="#top">CLICK HERE TO GO BACK TO THE TOP</a></h2>
 
 
-<div>
-    <p class="alignleft">Coach: Ahmad Dilliehunt<br>
-        Contact Info: Ahmad Dilliehunt's email (need to get)</p>
-    <p class="alignright">Captain: Nell Cook
-        <br>Contact Info: nellcook@students.berkeley.net</p>
+
+<div class="popup" onclick="myFunction()">Coach: Ahmad Dilliehun
+    <span class="popuptext" id="myPopup">adilliehunt@hotmail.com</span>
 </div>
+
+<div class="popup1" onclick="Function()">Captain: Nell Cook
+    <span class="popuptext1" id="myPopup1">nellcook@students.berkeley.net</span>
+</div>
+
+
 <div style="clear: both;"></div>
 
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+
+    function Function() {
+        var popup = document.getElementById("myPopup1");
+        popup.classList.toggle("show");
+    }
+</script>
 
 </body>
 </html>
