@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guesser</title>
+    <style>
+
+        .topnav {
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            color: rgb(255, 34, 21);
+        }
+
+        .topnav a.active {
+            background-color: rgb(255, 34, 21);
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+        /
+
+    </style>
+
+</head>
+<body>
+
+<div class="topnav">
+    <a id="top" href="https://avaanikataria.github.io">Home</a>
+    <a href="https://avaanikataria.github.io/about.html">About</a>
+    <a href="https://avaanikataria.github.io/gameschedule.html">Game Schedule</a>
+    <a class="active" href="#wordguesser">Word Guesser</a>
+</div>
+
+<div id="guess_display"></div>
+
+
+<form id="guess_form">
+    <label>Guess a letter:
+        <input type="text" id="guess_input">
+    </label>
+</form>
+
+<div id="guess_status"></div>
+
+<script>
+    // Store DOM elements in variables
+    var guessForm = document.getElementById("guess_form");
+    var guessDisplay = document.getElementById("guess_display");
+    var guessInput = document.getElementById("guess_input");
+    var guessStatus = document.getElementById("guess_status");
+
+    // Initialize game state variables
+    var secretWord = "banana";
+    var guessedWord = [];
+    var guessedLetters = [];
+    for (var i = 0; i < secretWord.length; i++) {
+        guessedWord[i] = "_";
+    }
+
+    // Returns true if its a correct guess -
+    //  if the letter is anywhere in the word
+    // Also updates guessedWord and guessedLetters
+    var checkLetterGuess = function(letter) {
+        var foundLetter = false;
+        for(var i = 0; i < guessedWord.length;i++){
+            if(letter === secretWord[i]){
+                foundLetter = true;
+                guessedWord[i] = secretWord[i];
+            }
+        }
+        return foundLetter;
+    };
+
+    // Returns true if they guessed the whole word
+    var hasWon = function() {
+        var Won = true;
+        for(var j = 0; j < secretWord.length;j++)
+        {
+            if(secretWord[j] !== guessedWord[j])
+            {
+                Won = false;
+            }
+        }
+        return Won;
+    };
+
+
+    var displayGuessedWord = function() {
+        guessDisplay.innerHTML = guessedWord.join(" ");
+    };
+
+
+    guessForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var foundLetter = checkLetterGuess(guessInput.value);
+        if (foundLetter) {
+            guessStatus.innerHTML = "GOOD JOB!";
+        } else {
+            guessStatus.innerHTML = "yikes... try again";
+        }
+        if (hasWon()) {
+            guessStatus.innerHTML = "YOU SOLVED IT!!";
+        }
+        displayGuessedWord();
+        guessInput.value = "";
+    });
+    displayGuessedWord();
+</script>
+
+</body>
+</html>
